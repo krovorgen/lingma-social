@@ -1,0 +1,22 @@
+.content {
+    grid-area: c;
+    border-radius: 10px;
+    background-color: #34675c;
+}
+
+.content__images {
+    margin-bottom: 15px;
+    width: 100%;
+    height: 300px;
+}
+
+.content__images img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content__container {
+    padding: 0 5px 5px;
+}
