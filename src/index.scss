@@ -5,26 +5,22 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
 }
 
 .container {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-areas:
-        "h h"
-        "n c";
-  grid-template-columns: 2fr 10fr;
-  grid-template-rows: 60px 1fr;
-  margin: 0 auto;
-  padding: 0 15px;
-  width: 100%;
-  min-width: 320px;
-  max-width: 1250px;
-  color: #f0f8ff;
+    display: grid;
+    grid-gap: 10px;
+    grid-template: "h h" 60px "n c" 1fr / 2fr 10fr;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1250px;
+    color: #f0f8ff;
 }

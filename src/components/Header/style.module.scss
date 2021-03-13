@@ -1,36 +1,36 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-area: h;
-  border-radius: 0 0 10px 10px;
-  padding: 5px 20px;
-  background-color: #324851;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: h;
+    border-radius: 0 0 10px 10px;
+    padding: 5px 20px;
+    background-color: #324851;
 }
 
 .header__logo {
-  height: 100%;
-  animation: App-logo-spin infinite 4s linear;
+    height: 100%;
+    animation: App-logo-spin infinite 4s linear;
 }
 
 .header__title {
-  padding: 0 20px;
-  font-size: 35px;
+    padding: 0 20px;
+    font-size: 35px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 460px) {
-  .header__title {
-    padding: 0 4px;
-    font-size: 24px;
-  }
+    .header__title {
+        padding: 0 4px;
+        font-size: 24px;
+    }
 }

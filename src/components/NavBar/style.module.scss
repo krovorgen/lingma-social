@@ -1,28 +1,28 @@
 .menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  grid-area: n;
-  border-radius: 18px;
-  height: 330px;
-  text-align: center;
-  background-color: #7da3a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: n;
+    border-radius: 18px;
+    height: 330px;
+    text-align: center;
+    background-color: #7da3a1;
 }
 
 .menu__list-item {
-  padding: 10px 0;
+    padding: 10px 0;
 }
 
 .menu__list-link {
-  font-size: 18px;
-  line-height: 120%;
-  text-decoration: none;
-  color: #fff;
-  transition: 0.5s all;
+    font-size: 18px;
+    line-height: 120%;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s all;
 }
 
 .menu__list-link:hover {
-  color: #324851;
-  transition: 0.5s all;
+    color: #324851;
+    transition: 0.5s all;
 }
