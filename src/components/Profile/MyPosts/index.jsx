@@ -11,7 +11,9 @@ const MyPosts = () => {
                 <textarea className={styles["my-posts__textarea"]} name="" placeholder="Write your message"/>
                 <button className={styles["my-posts__button"]} type="submit">Add post</button>
             </form>
-            <Post/><Post/><Post/><Post/><Post/><Post/><Post/><Post/><Post/><Post/><Post/><Post/><Post/>
+            <Post message="Hello maks"/>
+            <Post message="Hi"/>
+            <Post />
         </div>
     )
 }
