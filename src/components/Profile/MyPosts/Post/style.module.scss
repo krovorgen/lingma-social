@@ -2,6 +2,8 @@
     position: relative;
     display: flex;
     align-items: center;
+    background-color: #305d52;
+    border-radius: 5px;
 }
 
 .post:not(:last-child) {
@@ -20,14 +22,24 @@
     right: 0;
     bottom: 0;
     padding-right: 32px;
+    cursor: pointer;
 }
 
-.post__likes::before {
+.post__likes-images {
     content: "";
     position: absolute;
-    left: 11px;
-    top: -13px;
+    right: -4px;
+    top: -3px;
     width: 32px;
     height: 32px;
-    background: url("../../../../images/like.svg") no-repeat;
+}
+
+.post__likes-images svg {
+    fill: #fff;
+    transition: all 0.5s;
+}
+
+.post__likes-images svg:hover {
+    fill: #ff7979;
+    transition: all 0.5s;
 }
