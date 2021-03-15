@@ -2,19 +2,46 @@
     position: relative;
     display: flex;
     align-items: center;
-    background-color: #305d52;
     border-radius: 5px;
+    background-color: #305d52;
 }
 
 .post:not(:last-child) {
     margin-bottom: 10px;
 }
 
-.post__img {
+.gradient-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 15px;
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
+    width: 95px;
+    height: 95px;
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    animation: animatedgradient 3s ease alternate infinite;
+    user-select: none;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.post__img {
+    border-radius: 50%;
+    width: 89px;
+    height: 89px;
 }
 
 .post__likes {
