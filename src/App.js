@@ -1,13 +1,17 @@
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Profile from "./components/Profile";
+import Dialogs from "./components/Dialogs";
 
 const App = () => {
     return (
         <div className="container">
             <Header/>
             <NavBar/>
-            <Profile/>
+            <div className="container__content">
+                {/*<Dialogs/>*/}
+                <Profile/>
+            </div>
         </div>
     );
 }

@@ -5,11 +5,11 @@ import MyPosts from "./MyPosts";
 
 const Profile = () => {
     return (
-        <div className={styles["content"]}>
-            <div className={styles["content__images"]}>
-                <img src="img/main-bg.jpg" alt="" className={styles["content__img"]}/>
+        <div className={styles["main-page"]}>
+            <div className={styles["main-page__images"]}>
+                <img src="img/main-bg.jpg" alt="" className={styles["main-page__img"]}/>
             </div>
-            <div className={styles["content__container"]}>
+            <div className={styles["main-page__container"]}>
                 <div>ava + description</div>
                 <MyPosts/>
             </div>

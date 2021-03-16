@@ -56,3 +56,9 @@ body {
     max-width: 1250px;
     color: #f0f8ff;
 }
+
+.container__content {
+    grid-area: c;
+    border-radius: 10px;
+    background-color: #34675c;
+}
