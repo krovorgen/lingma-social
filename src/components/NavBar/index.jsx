@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./style.module.scss";
+import {NavLink} from "react-router-dom";
 
 const NavBar = () => {
     return (
         <nav className={styles['menu']}>
             <ul className={styles["menu__list"]}>
                 <li className={styles["menu__list-item"]}>
-                    <a href="/profile" className={styles['menu__list-link']}>Profile</a>
+                    <NavLink to="/profile" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>Profile</NavLink>
                 </li>
                 <li className={styles["menu__list-item"]}>
-                    <a href="/dialogs" className={styles['menu__list-link']}>Messages</a>
+                    <NavLink to="/dialogs" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>Messages</NavLink>
                 </li>
                 <li className={styles["menu__list-item"]}>
-                    <a href="/news" className={styles['menu__list-link']}>News</a>
+                    <NavLink to="/news" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>News</NavLink>
                 </li>
                 <li className={styles["menu__list-item"]}>
-                    <a href="/music" className={styles['menu__list-link']}>Music</a>
+                    <NavLink to="/music" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>Music</NavLink>
                 </li>
                 <li className={styles["menu__list-item"]}>
-                    <a href="/settings" className={styles['menu__list-link']}>Settings</a>
+                    <NavLink to="/settings" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>Settings</NavLink>
                 </li>
             </ul>
         </nav>
