@@ -1,9 +1,9 @@
 import React from "react";
-import DialogItem from "./DialogItem";
+
+import DialogItem from "../DialogItem";
+import MessageItem from "../MessageItem";
 
 import styles from "./style.module.scss";
-import MessageItem from "./MessageItem";
-
 
 const Dialogs = () => {
     return (

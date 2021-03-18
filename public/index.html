@@ -5,62 +5,23 @@
     <link rel="icon" href="favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#000000"/>
-    <meta
-            name="description"
-            content="Lingma social"
-    />
+    <meta name="description" content="Lingma social"/>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
     <title>Lingma Social</title>
-    <!--Yandex.Metrika counter--><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(74100445,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/74100445"style="position:absolute; left:-9999px;"alt=""/></div></noscript><!--/Yandex.Metrika counter-->
+    <!--YM--><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(74100445,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/74100445"style="position:absolute; left:-9999px;"alt=""/></div></noscript><!--/YM-->
 </head>
 <body>
 <div id="root"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+</script>
 <script>
-    $(".mail-btn").on("click touchstart", function () {
-        $(this).addClass("fly");
-        that = this
-        setTimeout(function () {
-            $(that).removeClass("fly");
-        }, 5400)
-    });
-    let date = new Date();
-    let hours = date.getHours();
-    console.log(hours)
-    if (hours === 0 || hours === 1 || hours === 2) {
-        $('body').addClass('bg-0-3');
-    }
+    changingBackground()
 
-    if (hours === 3 || hours === 4 || hours === 5) {
-        $('body').addClass('bg-3-6');
-    }
-
-    if (hours === 6 || hours === 7 || hours === 8) {
-        $('body').addClass('bg-6-9');
-    }
-
-    if (hours === 9 || hours === 10 || hours === 11) {
-        $('body').addClass('bg-9-12');
-    }
-
-    if (hours === 12 || hours === 13 || hours === 14) {
-        $('body').addClass('bg-12-15');
-    }
-
-    if (hours === 15 || hours === 16 || hours === 17) {
-        $('body').addClass('bg-15-18');
-    }
-
-    if (hours === 18 || hours === 19 || hours === 20) {
-        $('body').addClass('bg-18-21');
-    }
-
-    if (hours === 21 || hours === 22 || hours === 23) {
-        $('body').addClass('bg-21-0');
-    }
+    $(".mail-btn").on("click touchstart",function(){$(this).addClass("fly");that=this;setTimeout(function(){$(that).removeClass("fly")},5400)});
+    function changingBackground(){let date=new Date();let hours=date.getHours();if(hours===0||hours===1||hours===2){$('body').addClass('bg-0-3')}if(hours===3||hours===4||hours===5){$('body').addClass('bg-3-6')}if(hours===6||hours===7||hours===8){$('body').addClass('bg-6-9')}if(hours===9||hours===10||hours===11){$('body').addClass('bg-9-12')}if(hours===12||hours===13||hours===14){$('body').addClass('bg-12-15')}if(hours===15||hours===16||hours===17){$('body').addClass('bg-15-18')}if(hours===18||hours===19||hours===20){$('body').addClass('bg-18-21')}if(hours===21||hours===22||hours===23){$('body').addClass('bg-21-0')}}
 </script>
 </body>
 </html>
