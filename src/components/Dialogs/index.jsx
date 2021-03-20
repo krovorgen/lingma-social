@@ -7,8 +7,6 @@ import styles from "./style.module.scss";
 
 const Dialogs = ({state}) => {
 
-
-
     let dialogsElements = state.dialogs.map((d) => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = state.messages.map((m) => <MessageItem message={m.message}/>)
 

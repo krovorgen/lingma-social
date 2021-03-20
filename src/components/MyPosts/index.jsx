@@ -1,7 +1,8 @@
 import React from "react";
 
-import styles from "./style.module.scss";
 import Post from "../Post";
+
+import styles from "./style.module.scss";
 
 const MyPosts = ({
                      posts

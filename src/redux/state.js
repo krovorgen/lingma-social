@@ -1,3 +1,5 @@
+// Business Logic Layer
+
 let state = {
     profilePage: {
         posts: [
@@ -19,6 +21,5 @@ let state = {
         ],
     },
 };
-
 
 export default state;

@@ -7,8 +7,6 @@ import styles from "./style.module.scss";
 
 const Profile = ({state}) => {
 
-
-
     return (
         <div className={styles["main-page"]}>
             <ProfileInfo/>
