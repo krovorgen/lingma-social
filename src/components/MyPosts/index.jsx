@@ -3,13 +3,9 @@ import React from "react";
 import styles from "./style.module.scss";
 import Post from "../Post";
 
-const MyPosts = () => {
-
-    let posts = [
-        {id: 1, message: "Hello maks", like: "1"},
-        {id: 2, message: "Hi", like: "2"},
-        {id: 3, message: "", like: ""},
-    ];
+const MyPosts = ({
+                     posts
+                 }) => {
 
     let postsElements = posts.map(p => <Post message={p.message} like={p.like}/>)
 

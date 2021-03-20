@@ -12,8 +12,7 @@ const Post = ({message, like}) => {
             <div className={styles["post__likes"]}>
                 {like || 0}
                 <div className={styles["post__likes-images"]}>
-                    <svg height="22px" version="1.1" viewBox="0 0 512 512" width="22px" xmlSpace="preserve"
-                         xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <svg height="22px" version="1.1" viewBox="0 0 512 512" width="22px" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
                             <g>
                                 <path
