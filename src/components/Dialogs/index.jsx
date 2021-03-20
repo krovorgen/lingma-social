@@ -7,29 +7,28 @@ import styles from "./style.module.scss";
 
 const Dialogs = () => {
 
-    let dialogsData = [
+    let dialogs = [
         {id: 1, name: "Maksim"},
         {id: 2, name: "Sergey"},
         {id: 3, name: "Vadim"},
     ];
 
-    let messagesData = [
+    let messages = [
         {id: 1, message: "Hello, world!"},
         {id: 2, message: "Привет, мир!"},
         {id: 3, message: "Hallo, Welt!"},
     ];
 
+    let dialogsElements = dialogs.map((d) => <DialogItem name={d.name} id={d.id}/>);
+    let messagesElements = messages.map((m) => <MessageItem message={m.message}/>)
+
     return (
         <div className={styles["dialogs"]}>
             <div className={styles["dialog-items"]}>
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>
-                <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>
+                {dialogsElements}
             </div>
             <div className={styles["message-items"]}>
-                <MessageItem message={messagesData[0].message}/>
-                <MessageItem message={messagesData[1].message}/>
-                <MessageItem message={messagesData[2].message}/>
+                {messagesElements}
             </div>
         </div>
     )
