@@ -1,10 +1,10 @@
 // Business Logic Layer
 
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage: {
-        posts: [
-
-        ],
+        posts: [],
     },
     dialogsPage: {
         dialogs: [
@@ -26,8 +26,8 @@ export let addPost = (postMessage) => {
         message: postMessage,
         like: 0,
     }
-
-    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
+    state.profilePage.posts.unshift(newPost);
 }
 
 export default state;

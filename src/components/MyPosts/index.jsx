@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 
 const MyPosts = ({
                      posts,
-                    addPost
+                     addPost
                  }) => {
     let postsElements = posts.map(p => <Post message={p.message} like={p.like}/>)
 
@@ -14,15 +14,17 @@ const MyPosts = ({
 
     let addPosts = () => {
         let text = newPostElement.current.value;
-        addPost(text)
+        addPost(text);
+        newPostElement.current.value = "";
     }
 
     return (
         <div className={styles["my-posts"]}>My posts
-            <form className={styles["my-posts__form"]} action="#">
-                <textarea className={styles["my-posts__textarea"]} ref={newPostElement} placeholder="Write your message"/>
+            <div className={styles["my-posts__form"]}>
+                <textarea className={styles["my-posts__textarea"]} ref={newPostElement}
+                          placeholder="Write your message"/>
                 <button className={styles["my-posts__button"]} onClick={addPosts}>Add post</button>
-            </form>
+            </div>
             {postsElements}
         </div>
     )
