@@ -8,13 +8,13 @@ import Settings from "./components/Settings";
 
 import {Route} from "react-router-dom";
 
-const App = ({state, addPost}) => {
+const App = ({state, addPost, updateNewPostText}) => {
     return (
         <div className="container">
             <Header/>
             <NavBar/>
             <div className="container__content">
-                <Route path="/profile" render={() => <Profile state={state.profilePage} addPost={addPost}/>}/>
+                <Route path="/profile" render={() => <Profile profilePage={state.profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>}/>
                 <Route path="/dialogs" render={() => <Dialogs state={state.dialogsPage}/>}/>
                 <Route path="/news" render={() => <News/>}/>
                 <Route path="/music" render={() => <Music/>}/>

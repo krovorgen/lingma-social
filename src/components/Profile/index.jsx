@@ -5,12 +5,16 @@ import ProfileInfo from "../ProfileInfo";
 
 import styles from "./style.module.scss";
 
-const Profile = ({state, addPost}) => {
+const Profile = ({profilePage, addPost, updateNewPostText}) => {
 
     return (
         <div className={styles["main-page"]}>
             <ProfileInfo/>
-            <MyPosts posts={state.posts} addPost={addPost}/>
+            <MyPosts posts={profilePage.posts}
+                     newPostText={profilePage.newPostText}
+                     addPost={addPost}
+                     updateNewPostText={updateNewPostText}
+            />
         </div>
     )
 }
