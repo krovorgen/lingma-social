@@ -1,39 +1,46 @@
 // Business Logic Layer
 
-import {rerenderEntireTree} from "../render";
-
-let state = {
-    profilePage: {
-        posts: [],
-        newPostText: '',
+let store = {
+    _state: {
+        profilePage: {
+            posts: [],
+            newPostText: '',
+        },
+        dialogsPage: {
+            dialogs: [
+                {id: 1, name: "Maksim"},
+                {id: 2, name: "Sergey"},
+                {id: 3, name: "Vadim"},
+            ],
+            messages: [
+                {id: 1, message: "Hello, world!"},
+                {id: 2, message: "Привет, мир!"},
+                {id: 3, message: "Hallo, Welt!"},
+            ],
+        },
     },
-    dialogsPage: {
-        dialogs: [
-            {id: 1, name: "Maksim"},
-            {id: 2, name: "Sergey"},
-            {id: 3, name: "Vadim"},
-        ],
-        messages: [
-            {id: 1, message: "Hello, world!"},
-            {id: 2, message: "Привет, мир!"},
-            {id: 3, message: "Hallo, Welt!"},
-        ],
+    getState() {
+        return this._state
     },
+    _callSubscriber() {
+    },
+    addPost() {
+        let newPost = {
+            id: 1,
+            message: this._state.profilePage.newPostText,
+            like: 0,
+        }
+        this._state.profilePage.posts.unshift(newPost);
+        this._state.profilePage.newPostText = "";
+        this._callSubscriber(this._state);
+    },
+    updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText;
+        this._callSubscriber(this._state);
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    }
 };
 
-export let addPost = () => {
-    let newPost = {
-        id: 1,
-        message: state.profilePage.newPostText,
-        like: 0,
-    }
-    state.profilePage.posts.unshift(newPost);
-    rerenderEntireTree(state);
-}
-
-export let updateNewPostText = (newText) => {
-    state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
-}
-
-export default state;
+export default store;

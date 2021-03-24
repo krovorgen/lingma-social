@@ -16,7 +16,6 @@ const MyPosts = ({
 
     let addPosts = () => {
         addPost();
-        updateNewPostText('');
     };
 
     let onPostChange = () => {
