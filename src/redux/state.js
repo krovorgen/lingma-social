@@ -1,5 +1,8 @@
 // Business Logic Layer
 
+const ADD_POST = "ADD-POST";
+const UPDATE_ADD_POST_TEXT = "UPDATE-ADD-POST-TEXT";
+
 let store = {
     _state: {
         profilePage: {
@@ -30,7 +33,8 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === "ADD-POST") {
+        console.log(action)
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 1,
                 message: this._state.profilePage.newPostText,
@@ -41,12 +45,17 @@ let store = {
             this._callSubscriber(this._state);
         }
 
-        if (action.type === "UPDATE-ADD-POST-TEXT") {
+        if (action.type === UPDATE_ADD_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
     }
 };
+
+export const addPostActionCreator = () => ({type: ADD_POST});
+
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_ADD_POST_TEXT, newText: text});
+
 window.store = store; // For tracking in the console
 
 export default store;
