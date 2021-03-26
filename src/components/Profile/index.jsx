@@ -5,15 +5,14 @@ import ProfileInfo from "../ProfileInfo";
 
 import styles from "./style.module.scss";
 
-const Profile = ({profilePage, addPost, updateNewPostText}) => {
+const Profile = ({profilePage, dispatch}) => {
 
     return (
         <div className={styles["main-page"]}>
             <ProfileInfo/>
             <MyPosts posts={profilePage.posts}
                      newPostText={profilePage.newPostText}
-                     addPost={addPost}
-                     updateNewPostText={updateNewPostText}
+                     dispatch={dispatch}
             />
         </div>
     )

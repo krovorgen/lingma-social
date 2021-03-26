@@ -6,21 +6,20 @@ import styles from "./style.module.scss";
 
 const MyPosts = ({
                      posts,
-                     addPost,
                      newPostText,
-                     updateNewPostText
+                     dispatch
                  }) => {
     let postsElements = posts.map(p => <Post message={p.message} like={p.like}/>)
 
     let newPostElement = React.createRef();
 
     let addPosts = () => {
-        addPost();
+        dispatch({type: "ADD-POST"});
     };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        updateNewPostText(text);
+        dispatch({type: "UPDATE-ADD-POST-TEXT", newText: text});
     };
 
     return (
