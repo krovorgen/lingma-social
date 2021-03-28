@@ -2,6 +2,8 @@
 
 const ADD_POST = "ADD-POST";
 const UPDATE_ADD_POST_TEXT = "UPDATE-ADD-POST-TEXT";
+const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
 
 let store = {
     _state: {
@@ -15,11 +17,8 @@ let store = {
                 {id: 2, name: "Sergey"},
                 {id: 3, name: "Vadim"},
             ],
-            messages: [
-                {id: 1, message: "Hello, world!"},
-                {id: 2, message: "Привет, мир!"},
-                {id: 3, message: "Hallo, Welt!"},
-            ],
+            messages: [],
+            newMessageText: '',
         },
     },
     _callSubscriber() {
@@ -45,16 +44,32 @@ let store = {
             this._callSubscriber(this._state);
         }
 
+        if (action.type === ADD_MESSAGE) {
+            let newMessage = {
+                id: 1,
+                message: this._state.dialogsPage.newMessageText,
+            }
+            this._state.dialogsPage.messages.unshift(newMessage);
+            this._state.dialogsPage.newMessageText = "";
+            this._callSubscriber(this._state);
+        }
+
         if (action.type === UPDATE_ADD_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+
+        if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+            this._state.dialogsPage.newMessageText = action.newText;
             this._callSubscriber(this._state);
         }
     }
 };
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_ADD_POST_TEXT, newText: text});
+export const addPostCreator = () => ({type: ADD_POST});
+export const addMessageCreator = () => ({type: ADD_MESSAGE});
+export const updateNewPostTextCreator = (text) => ({type: UPDATE_ADD_POST_TEXT, newText: text});
+export const updateNewMessageTextCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
 
 window.store = store; // For tracking in the console
 
