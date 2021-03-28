@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 import {addMessageCreator, updateNewMessageTextCreator} from "../../redux/dialogs-reducer";
 
 const Dialogs = ({dialogsPage, dispatch}) => {
-    console.log(dialogsPage.newMessageText)
+
     let dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = dialogsPage.messages.map((m) => <MessageItem message={m.message}/>)
 
