@@ -3,7 +3,7 @@ import React from "react";
 import Post from "../Post";
 
 import styles from "./style.module.scss";
-import {addPostCreator, updateNewPostTextCreator} from "../../redux/state";
+import {addPostCreator, updateNewPostTextCreator} from "../../redux/profile-reducer";
 
 const MyPosts = ({
                      posts,
