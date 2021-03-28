@@ -3,25 +3,25 @@ import React from "react";
 import Post from "../Post";
 
 import styles from "./style.module.scss";
-import {addPostCreator, updateNewPostTextCreator} from "../../redux/profile-reducer";
 
 const MyPosts = ({
                      posts,
                      newPostText,
-                     dispatch
+                     updateNewPostText,
+                     addPost
                  }) => {
-    
+
     let postsElements = posts.map(p => <Post message={p.message} like={p.like}/>);
 
     let newPostElement = React.createRef();
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        dispatch(updateNewPostTextCreator(text));
+        updateNewPostText(text);
     };
 
-    let addPosts = () => {
-        dispatch(addPostCreator());
+    let onAddPost = () => {
+        addPost();
     };
 
     return (
@@ -29,7 +29,7 @@ const MyPosts = ({
             <div className={styles["my-posts__form"]}>
                 <textarea className={styles["my-posts__textarea"]} onChange={onPostChange} ref={newPostElement}
                           placeholder="Write your message" value={newPostText}/>
-                <button className={styles["my-posts__button"]} onClick={addPosts}>Add post</button>
+                <button className={styles["my-posts__button"]} onClick={onAddPost}>Add post</button>
             </div>
             {postsElements}
         </div>

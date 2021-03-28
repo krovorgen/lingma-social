@@ -4,9 +4,8 @@ import DialogItem from "../DialogItem";
 import MessageItem from "../MessageItem";
 
 import styles from "./style.module.scss";
-import {addMessageCreator, updateNewMessageTextCreator} from "../../redux/dialogs-reducer";
 
-const Dialogs = ({dialogsPage, dispatch}) => {
+const Dialogs = ({dialogsPage, updateNewMessage, sendMessage}) => {
 
     let dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = dialogsPage.messages.map((m) => <MessageItem message={m.message}/>)
@@ -14,11 +13,11 @@ const Dialogs = ({dialogsPage, dispatch}) => {
 
     let onMessageChange = (e) => {
         let text = e.target.value;
-        dispatch(updateNewMessageTextCreator(text));
+        updateNewMessage(text);
     };
 
     let addMessage = () => {
-        dispatch(addMessageCreator());
+        sendMessage();
     };
 
     return (
