@@ -8,14 +8,14 @@ import Music from "./components/Music";
 import Settings from "./components/Settings";
 import DialogsContainer from "./components/DialogsContainer";
 
-const App = ({state, dispatch}) => {
+const App = () => {
     return (
         <div className="container">
             <Header/>
             <NavBar/>
             <div className="container__content">
-                <Route path="/profile" render={() => <Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
-                <Route path="/dialogs" render={() => <DialogsContainer dialogsPage={state.dialogsPage} dispatch={dispatch}/>}/>
+                <Route path="/profile" render={() => <Profile />}/>
+                <Route path="/dialogs" render={() => <DialogsContainer />}/>
                 <Route path="/news" render={() => <News/>}/>
                 <Route path="/music" render={() => <Music/>}/>
                 <Route path="/settings" render={() => <Settings/>}/>

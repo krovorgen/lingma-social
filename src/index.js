@@ -5,15 +5,15 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from "react-router-dom";
 import './index.scss';
 import App from './App';
+import {Provider} from "./StoreContext";
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App
-                    state={state}
-                    dispatch={store.dispatch}
-                />
+                <Provider store={store}>
+                    <App />
+                </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')

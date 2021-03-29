@@ -5,16 +5,12 @@ import MyPostsContainer from "../MyPostsContainer";
 
 import styles from "./style.module.scss";
 
-const Profile = ({profilePage, dispatch}) => {
+const Profile = () => {
 
     return (
         <div className={styles["main-page"]}>
             <ProfileInfo/>
-            <MyPostsContainer
-                posts={profilePage.posts}
-                newPostText={profilePage.newPostText}
-                dispatch={dispatch}
-            />
+            <MyPostsContainer />
         </div>
     )
 }
