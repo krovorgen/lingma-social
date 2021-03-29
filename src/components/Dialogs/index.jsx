@@ -7,8 +7,8 @@ import styles from "./style.module.scss";
 
 const Dialogs = ({dialogsPage, updateNewMessage, sendMessage}) => {
 
-    let dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = dialogsPage.messages.map((m) => <MessageItem message={m.message}/>)
+    let dialogsElements = dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
+    let messagesElements = dialogsPage.messages.map(m => <MessageItem message={m.message} key={m.id}/>)
 
 
     let onMessageChange = (e) => {
