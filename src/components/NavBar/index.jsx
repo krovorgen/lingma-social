@@ -22,6 +22,9 @@ const NavBar = () => {
                 <li className={styles["menu__list-item"]}>
                     <NavLink to="/settings" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>Settings</NavLink>
                 </li>
+                <li className={styles["menu__list-item"]}>
+                    <NavLink to="/users" activeClassName={styles['menu__list-link--active']} className={styles['menu__list-link']}>Users</NavLink>
+                </li>
             </ul>
         </nav>
     )

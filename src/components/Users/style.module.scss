@@ -1,0 +1,77 @@
+.users-items {
+    padding: 15px 5px;
+}
+
+.users-item {
+    display: flex;
+}
+
+.users-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.users-item__follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 145px;
+}
+
+.users-item__follow-btn {
+    display: inline-block;
+    outline: none;
+    border: 1px solid #1098ad;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 14px;
+    line-height: 120%;
+    color: #fff;
+    background: #1098ad;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.users-item__follow-btn:hover {
+    border: 1px solid #1098ad;
+    color: #1098ad;
+    background: #fff;
+    transition: all 0.5s;
+}
+
+.users-item__follow-images {
+    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+}
+
+.users-item__follow-images img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.users-item__info {
+    padding: 0 15px;
+}
+
+.users-item__info-name {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 120%;
+}
+
+.users-item__info-status {
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 120%;
+}
+
+.users-item__info-location {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 120%;
+}
