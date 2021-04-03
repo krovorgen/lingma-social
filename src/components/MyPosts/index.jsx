@@ -10,7 +10,7 @@ const MyPosts = ({
     updateNewPostText,
     addPost,
 }) => {
-    const postsElements = posts.map((p) => <Post message={p.message} like={p.like} />);
+    const postsElements = posts.map((p) => <Post message={p.message} like={p.like} key={Math.random()} />);
 
     const newPostElement = React.createRef();
 

@@ -6,8 +6,8 @@ import MessageItem from '../MessageItem';
 import styles from './style.module.scss';
 
 const Dialogs = ({ dialogsPage, updateNewMessage, sendMessage }) => {
-    const dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} id={d.id} key={d.id} />);
-    const messagesElements = dialogsPage.messages.map((m) => <MessageItem message={m.message} key={m.id} />);
+    const dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} id={d.id} key={Math.random()} />);
+    const messagesElements = dialogsPage.messages.map((m) => <MessageItem message={m.message} key={Math.random()} />);
 
     const onMessageChange = (e) => {
         const text = e.target.value;
