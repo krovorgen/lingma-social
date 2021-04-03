@@ -1,41 +1,39 @@
-import React from "react";
+import React from 'react';
 
-import DialogItem from "../DialogItem";
-import MessageItem from "../MessageItem";
+import DialogItem from '../DialogItem';
+import MessageItem from '../MessageItem';
 
-import styles from "./style.module.scss";
+import styles from './style.module.scss';
 
-const Dialogs = ({dialogsPage, updateNewMessage, sendMessage}) => {
+const Dialogs = ({ dialogsPage, updateNewMessage, sendMessage }) => {
+    const dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} id={d.id} key={d.id} />);
+    const messagesElements = dialogsPage.messages.map((m) => <MessageItem message={m.message} key={m.id} />);
 
-    let dialogsElements = dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
-    let messagesElements = dialogsPage.messages.map(m => <MessageItem message={m.message} key={m.id}/>)
-
-
-    let onMessageChange = (e) => {
-        let text = e.target.value;
+    const onMessageChange = (e) => {
+        const text = e.target.value;
         updateNewMessage(text);
     };
 
-    let addMessage = () => {
+    const addMessage = () => {
         sendMessage();
     };
 
     return (
-        <div className={styles["dialogs"]}>
-            <div className={styles["dialog-items"]}>
+        <div className={styles.dialogs}>
+            <div className={styles['dialog-items']}>
                 {dialogsElements}
             </div>
-            <div className={styles["message-items"]}>
-                <ul className={styles["message-elements"]}>
+            <div className={styles['message-items']}>
+                <ul className={styles['message-elements']}>
                     {messagesElements}
                 </ul>
-                <div className={styles["message-form"]}>
-                    <textarea className={styles["message-form__textarea"]} onChange={onMessageChange} value={dialogsPage.newMessageText}/>
-                    <button className={styles["message-form__button"]} onClick={addMessage}>Add post</button>
+                <div className={styles['message-form']}>
+                    <textarea className={styles['message-form__textarea']} onChange={onMessageChange} value={dialogsPage.newMessageText} />
+                    <button className={styles['message-form__button']} onClick={addMessage} type="submit">Add post</button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Dialogs;
