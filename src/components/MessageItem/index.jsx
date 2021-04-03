@@ -1,15 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./style.module.scss";
+import styles from './style.module.scss';
 
 const MessageItem = ({
-                     message
-                 }) => {
-    return (
-        <li className={styles["message-item"]}>
-            {message}
-        </li>
-    )
-}
+    message,
+}) => (
+    <li className={styles['message-item']}>
+        {message}
+    </li>
+);
 
 export default MessageItem;
