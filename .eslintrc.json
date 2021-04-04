@@ -17,6 +17,7 @@
     "react/react-in-jsx-scope": "off",
     "linebreak-style": 0,
     "dot-notation": "off",
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "react/jsx-indent-props": "off"
   }
 }
