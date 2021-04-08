@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import styles from './style.module.scss';
 
@@ -29,7 +30,9 @@ const Users = ({
                         <div key={u.id} className={styles['users-item']}>
                             <div className={styles['users-item__follow']}>
                                 <div className={styles['users-item__follow-images']}>
-                                    <img src={u.photos.small || '/img/users/1.jpg'} alt="" />
+                                    <NavLink to={`/profile/${u.id}`}>
+                                        <img src={u.photos.small || '/img/users/1.jpg'} alt="" />
+                                    </NavLink>
                                 </div>
                                 {u.followed
                                     ? <button className={styles['users-item__follow-btn']} onClick={() => { unfollow(u.id); }} type="submit">Unsubscribe</button>

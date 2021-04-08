@@ -5,9 +5,9 @@ import MyPostsContainer from '../MyPostsContainer';
 
 import styles from './style.module.scss';
 
-const Profile = () => (
+const Profile = ({ photos }) => (
     <div className={styles['main-page']}>
-        <ProfileInfo />
+        <ProfileInfo photos={photos} />
         <MyPostsContainer />
     </div>
 );
