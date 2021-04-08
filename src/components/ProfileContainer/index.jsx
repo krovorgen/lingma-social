@@ -14,7 +14,7 @@ class ProfileContainer extends React.Component {
 
     render() {
         return (
-            <Profile photos={this.props.photos} />
+            <Profile {...this.props} />
         );
     }
 }
